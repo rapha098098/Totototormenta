@@ -1,0 +1,665 @@
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111016;
+    color: #f1e8d8;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    width: 100%;
+    padding: 25px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #191620;
+    border-bottom: 1px solid #55452f;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    color: #e5bd75;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ded6c8;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e5bd75;
+}
+
+
+/* PÁGINA INICIAL */
+
+.inicio {
+    min-height: 550px;
+    padding: 120px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        linear-gradient(
+            90deg,
+            #111016 10%,
+            #111016bb
+        ),
+        radial-gradient(
+            circle at 80% 50%,
+            #7a3434,
+            transparent 50%
+        );
+
+    border-bottom: 1px solid #55452f;
+}
+
+.inicio span {
+    color: #e5bd75;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.inicio h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 65px;
+    line-height: 1.2;
+
+    margin: 20px 0;
+    max-width: 750px;
+}
+
+.inicio h1 strong {
+    color: #e5bd75;
+}
+
+.inicio p {
+    color: #bcb3c2;
+    max-width: 550px;
+
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* BOTÃO PRINCIPAL */
+
+.botao-principal {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 16px 25px;
+
+    background-color: #e5bd75;
+    color: #191620;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: #f5d59c;
+    transform: translateY(-3px);
+}
+
+
+/* SEÇÃO DAS RAÇAS */
+
+.racas {
+    padding: 80px 8%;
+}
+
+.subtitulo {
+    color: #e5bd75;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+
+    margin: 15px 0;
+}
+
+.descricao {
+    color: #a9a0b0;
+    font-size: 14px;
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* PESQUISA E FILTROS */
+
+.ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.pesquisa {
+    flex: 1;
+    min-width: 230px;
+
+    padding: 15px;
+
+    background-color: #211d28;
+    border: 1px solid #403749;
+    border-radius: 4px;
+
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.pesquisa::placeholder {
+    color: #82798b;
+}
+
+.pesquisa:focus {
+    border-color: #e5bd75;
+}
+
+
+/* BOTÕES DE FILTRO */
+
+.filtro {
+    padding: 12px 18px;
+
+    background-color: #211d28;
+    color: #bcb3c2;
+
+    border: 1px solid #403749;
+    border-radius: 4px;
+
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.filtro:hover {
+    border-color: #e5bd75;
+    color: #e5bd75;
+}
+
+.filtro.ativo {
+    background-color: #e5bd75;
+    color: #191620;
+    border-color: #e5bd75;
+
+    font-weight: bold;
+}
+
+
+/* BOTÕES ADICIONAIS */
+
+.acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 35px;
+}
+
+.botao-aleatorio,
+.botao-favoritos {
+    padding: 13px 20px;
+
+    background-color: #211d28;
+    color: #e5bd75;
+
+    border: 1px solid #8e7047;
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.botao-aleatorio:hover,
+.botao-favoritos:hover {
+    background-color: #e5bd75;
+    color: #191620;
+
+    transform: translateY(-2px);
+}
+
+
+/* CONTAINER DOS CARDS */
+
+.container-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+
+/* CARD INDIVIDUAL */
+
+.card {
+    background-color: #211d28;
+
+    border: 1px solid #403749;
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #e5bd75;
+
+    box-shadow: 0 10px 30px #00000055;
+}
+
+
+/* IMAGEM DO CARD */
+
+.card-imagem {
+    height: 170px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 75px;
+
+    background:
+        radial-gradient(
+            circle,
+            #594532,
+            transparent 70%
+        ),
+        #18151f;
+
+    border-bottom: 1px solid #403749;
+}
+
+
+/* CONTEÚDO DO CARD */
+
+.card-conteudo {
+    padding: 22px;
+}
+
+.categoria {
+    color: #e5bd75;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 23px;
+
+    margin: 12px 0;
+}
+
+.card p {
+    color: #bcb3c2;
+
+    font-size: 12px;
+    line-height: 1.8;
+
+    min-height: 90px;
+}
+
+
+/* BOTÃO DOS CARDS */
+
+.card-conteudo button {
+    width: 100%;
+
+    padding: 13px;
+    margin-top: 20px;
+
+    background-color: transparent;
+    color: #e5bd75;
+
+    border: 1px solid #8e7047;
+    border-radius: 3px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.card-conteudo button:hover {
+    background-color: #e5bd75;
+    color: #191620;
+}
+
+
+/* BOTÃO DE FAVORITOS DO CARD */
+
+.card .favorito {
+    background-color: transparent;
+    color: #e5bd75;
+
+    border: 1px solid #403749;
+}
+
+.card .favorito.ativo {
+    background-color: #e5bd75;
+    color: #191620;
+}
+
+
+/* MENSAGEM DE PESQUISA */
+
+.sem-resultados {
+    padding: 40px;
+
+    color: #bcb3c2;
+    text-align: center;
+
+    font-size: 15px;
+}
+
+
+/* SEÇÃO SOBRE */
+
+.sobre {
+    padding: 80px 10%;
+
+    background-color: #1b1722;
+
+    border-top: 1px solid #403749;
+
+    text-align: center;
+}
+
+.sobre h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 35px;
+
+    color: #e5bd75;
+
+    margin-bottom: 25px;
+}
+
+.sobre p {
+    max-width: 800px;
+
+    margin: 0 auto 20px;
+
+    color: #bcb3c2;
+
+    font-size: 15px;
+    line-height: 2;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    padding: 35px;
+
+    text-align: center;
+
+    background-color: #111016;
+    border-top: 1px solid #403749;
+
+    color: #a9a0b0;
+
+    font-size: 12px;
+    line-height: 2;
+}
+
+footer span {
+    color: #e5bd75;
+    font-weight: bold;
+}
+
+
+/* MODAL - JANELA DE INFORMAÇÕES */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #000000dd;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+
+    padding: 20px;
+}
+
+
+/* CONTEÚDO DO MODAL */
+
+.modal-conteudo {
+    position: relative;
+
+    background-color: #211d28;
+
+    border: 1px solid #e5bd75;
+    border-radius: 8px;
+
+    max-width: 550px;
+    width: 100%;
+
+    padding: 45px;
+
+    box-shadow: 0 0 50px #000000aa;
+
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.modal-conteudo h2 {
+    font-family: 'Cinzel', serif;
+    color: #e5bd75;
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+.modal-conteudo p {
+    color: #c8bfcb;
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* BOTÃO DE FECHAR MODAL */
+
+.fechar {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    background: none;
+    border: none;
+
+    color: #e5bd75;
+
+    font-size: 30px;
+
+    transition: 0.3s;
+}
+
+.fechar:hover {
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+
+/* RESPONSIVIDADE - NOTEBOOKS */
+
+@media (max-width: 1100px) {
+
+    .container-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* RESPONSIVIDADE - TABLETS */
+
+@media (max-width: 800px) {
+
+    .container-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inicio h1 {
+        font-size: 45px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+}
+
+
+/* RESPONSIVIDADE - CELULARES */
+
+@media (max-width: 500px) {
+
+    .container-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .inicio {
+        padding: 80px 8%;
+        min-height: 450px;
+    }
+
+    .inicio h1 {
+        font-size: 37px;
+    }
+
+    .inicio p {
+        font-size: 13px;
+    }
+
+    .racas {
+        padding: 60px 6%;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .pesquisa {
+        width: 100%;
+    }
+
+    .filtro {
+        flex: 1;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .botao-aleatorio,
+    .botao-favoritos {
+        width: 100%;
+    }
+
+    .modal-conteudo {
+        padding: 35px 25px;
+    }
+
+    .modal-conteudo h2 {
+        font-size: 26px;
+    }
+
+    .sobre {
+        padding: 60px 8%;
+    }
+
+    .sobre h2 {
+        font-size: 28px;
+    }
+
+}

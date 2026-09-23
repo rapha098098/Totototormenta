@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atlas de Arton | Tormenta20</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="logo">
+            ATLAS DE ARTON
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#racas">Raças</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PÁGINA INICIAL -->
+
+    <main>
+
+        <section class="inicio" id="inicio">
+
+            <span>UM GUIA PARA AVENTUREIROS</span>
+
+            <h1>
+                Todo herói tem uma
+                <strong>origem.</strong>
+            </h1>
+
+            <p>
+                Descubra os diferentes povos que habitam Arton,
+                conheça suas histórias e características e encontre
+                a inspiração para criar seu próximo personagem
+                no universo de Tormenta20.
+            </p>
+
+            <a href="#racas" class="botao-principal">
+                EXPLORAR AS RAÇAS →
+            </a>
+
+        </section>
+
+
+        <!-- SEÇÃO DAS RAÇAS -->
+
+        <section class="racas" id="racas">
+
+            <span class="subtitulo">
+                CONHEÇA OS POVOS DE ARTON
+            </span>
+
+            <h2 class="titulo">
+                Raças de Tormenta20
+            </h2>
+
+            <p class="descricao">
+                Explore as diferentes raças disponíveis no jogo
+                e descubra suas características.
+            </p>
+
+
+            <!-- PESQUISA E FILTROS -->
+
+            <div class="ferramentas">
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    class="pesquisa"
+                    placeholder="Pesquisar uma raça..."
+                    aria-label="Pesquisar uma raça"
+                >
+
+                <button
+                    class="filtro ativo"
+                    onclick="filtrarRacas('Todas', this)"
+                >
+                    Todas
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarRacas('Clássicas', this)"
+                >
+                    Clássicas
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarRacas('Fantásticas', this)"
+                >
+                    Fantásticas
+                </button>
+
+                <button
+                    class="filtro"
+                    onclick="filtrarRacas('Incomuns', this)"
+                >
+                    Incomuns
+                </button>
+
+            </div>
+
+
+            <!-- BOTÕES ADICIONAIS -->
+
+            <div class="acoes">
+
+                <button
+                    class="botao-aleatorio"
+                    onclick="sortearRaca()"
+                >
+                    🎲 Sortear uma raça
+                </button>
+
+                <button
+                    class="botao-favoritos"
+                    onclick="mostrarFavoritos()"
+                >
+                    ★ Meus favoritos
+                </button>
+
+            </div>
+
+
+            <!-- CARDS DAS RAÇAS -->
+
+            <div
+                class="container-cards"
+                id="containerRacas"
+            >
+
+                <!-- Os cards serão adicionados pelo JavaScript -->
+
+            </div>
+
+
+            <!-- MENSAGEM PARA PESQUISA SEM RESULTADOS -->
+
+            <p
+                id="semResultados"
+                class="sem-resultados"
+                style="display: none;"
+            >
+                Nenhuma raça encontrada.
+            </p>
+
+        </section>
+
+
+        <!-- SOBRE TORMENTA20 -->
+
+        <section class="sobre" id="sobre">
+
+            <h2>
+                O Mundo de Arton
+            </h2>
+
+            <p>
+                Tormenta20 é um RPG de fantasia que se passa em Arton,
+                um mundo habitado por diferentes povos, criaturas,
+                reinos e divindades.
+            </p>
+
+            <p>
+                Cada raça possui características próprias,
+                permitindo que os jogadores criem personagens
+                com diferentes histórias, aparências e habilidades.
+            </p>
+
+            <p>
+                Este site é um guia introdutório e não oficial,
+                criado para apresentar algumas das raças
+                disponíveis no jogo.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            <span>ATLAS DE ARTON</span> — Guia de Raças
+        </p>
+
+        <p>
+            Projeto de fã não oficial sobre Tormenta20.
+        </p>
+
+        <p>
+            Tormenta20 pertence aos seus respectivos criadores
+            e à Jambô Editora.
+        </p>
+
+    </footer>
+
+
+    <!-- JANELA DE INFORMAÇÕES DAS RAÇAS -->
+
+    <div
+        class="modal"
+        id="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitulo"
+    >
+
+        <div class="modal-conteudo">
+
+            <button
+                class="fechar"
+                onclick="fecharModal()"
+                aria-label="Fechar janela"
+            >
+                ×
+            </button>
+
+            <h2 id="modalTitulo"></h2>
+
+            <p id="modalDescricao"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONEXÃO COM O JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
